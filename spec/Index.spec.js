@@ -8,8 +8,8 @@ describe('Directive Test', function() {
 
 		directive.click();
 
-		var span = element(by.css('some-directive div span'));
+		var h3 = element(by.css('some-directive div h3'));
 
-		expect(span.getText()).toEqual('Thank you for clicking!');
+		expect(h3.getText()).toEqual('Thank you for clicking!');
 	});
 });

@@ -6,12 +6,16 @@ function SomeDirective() {
 				'<span>Click here to replace the text</span>',
 			'</div>'
 		].join(''),
+		require: 'someDirective',
 		controller: function() {
 			this.text = 'Replace this text!';
 		},
 		controllerAs: 'some',
 		link: function (scope, elem, attrs) {
-
+			elem[0].addEventListener('click', function () {
+				scope.some.text =  "Thank you for clicking!";
+				scope.$apply();
+			})
 		}
 	}
 }
