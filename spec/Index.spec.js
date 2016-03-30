@@ -4,12 +4,12 @@ describe('Directive Test', function() {
 	browser.get('http://localhost:8080');
 
 	it('should update the text on click', function() {
-		var directive = element(by.css('some-directive div'));
-
-		directive.click();
-
 		var span = element(by.css('some-directive div span'));
 
-		expect(span.getText()).toEqual('Thank you for clicking!');
+		span.click();
+
+		var h3 = element(by.css('some-directive div h3'));
+
+		expect(h3.getText()).toEqual('Thank you for clicking!');
 	});
 });
