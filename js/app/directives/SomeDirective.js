@@ -11,9 +11,21 @@ function SomeDirective() {
 		},
 		controllerAs: 'some',
 		link: function (scope, elem, attrs) {
-
+			// debugger;
+			var actualElement = elem[0];
+			var spanElement = actualElement.querySelector('span');
+			spanElement.addEventListener('click', function () {
+				debugger;
+				scope.text = "clicked";
+				scope.$apply();
+			});
+			// scope.text = "new text";
+			// elem.on("click", function(e) {
+			// 	this.text
+			// debugger;
+			// });
 		}
-	}
+	};
 }
 
 angular
