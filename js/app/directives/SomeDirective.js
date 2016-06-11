@@ -7,11 +7,18 @@ function SomeDirective() {
 			'</div>'
 		].join(''),
 		controller: function() {
-			this.text = 'Replace this text!';
+			this.text = 'Thank you for clicking!';
 		},
+		require: 'someDirective',
 		controllerAs: 'some',
-		link: function (scope, elem, attrs) {
+		link: function (scope, elem, attrs, ctrl) {
+			var el = elem[0];
 
+			var span = el.querySelector('span');
+			el.addEventListener('click', function () {
+				span.textContent = 'Thank you for clicking!';
+				scope.$apply();
+			});
 		}
 	}
 }
