@@ -16,7 +16,7 @@ function SomeDirective() {
 			var h3Element = actualElement.querySelector('h3');
 			var spanElement = actualElement.querySelector('span');
 			spanElement.addEventListener('click', function () {
-					ctrl.status = 'Clicked!';
+					ctrl.text = 'Thank you for clicking!';
 
 					scope.$apply();
 			});
