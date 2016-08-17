@@ -8,7 +8,7 @@ function SomeDirective() {
 		].join(''),
 		require: 'someDirective',
 		controller: function() {
-			this.text = 'Replace this text!';
+			this.text = 'Thank you for clicking!';
 		},
 		controllerAs: 'some',
 		link: function (scope, elem, attrs) {
