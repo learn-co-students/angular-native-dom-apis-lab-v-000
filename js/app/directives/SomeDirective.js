@@ -10,9 +10,13 @@ function SomeDirective() {
 			this.text = 'Replace this text!';
 		},
 		controllerAs: 'some',
-		link: function (scope, elem, attrs) {
-
-		}
+		link: function (scope, elem, attrs, controller) {
+			elem[0].addEventListener('click', function() {
+				controller.text = 'Thank you for clicking!';
+				scope.$apply();
+			});
+		},
+		require: 'someDirective'
 	}
 }
 
