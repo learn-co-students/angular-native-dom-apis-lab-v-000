@@ -10,8 +10,12 @@ function SomeDirective() {
 			this.text = 'Replace this text!';
 		},
 		controllerAs: 'some',
-		link: function (scope, elem, attrs) {
-
+		link: function (scope, elem, attrs, ctrl) {			
+			var spanElement = elem[0].querySelector('span');
+			spanElement.addEventListener('click', function() {
+				ctrl.text = "Thank you for clicking!";			
+				scope.$apply();
+			});
 		}
 	}
 }
