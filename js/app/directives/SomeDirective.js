@@ -9,9 +9,15 @@ function SomeDirective() {
 		controller: function() {
 			this.text = 'Replace this text!';
 		},
+		require: 'someDirective',
 		controllerAs: 'some',
-		link: function (scope, elem, attrs) {
-
+		link: function (scope, elem, attrs, ctrl) {
+			var textElement = elem[0].querySelector('span');
+			textElement.addEventListener('click', function() {
+				ctrl.text = "Thank you for clicking!";
+				console.log("whatup");
+				scope.$apply();
+			});
 		}
 	}
 }
