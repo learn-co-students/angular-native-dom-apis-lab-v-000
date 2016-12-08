@@ -17,7 +17,7 @@ function SomeDirective() {
 
 			spanElement.addEventListener('click', function() {
 				ctrl.text = 'Thank you for clicking!';
-				scope.$apply();
+				scope.$digest();
 			});
 		}
 	}
