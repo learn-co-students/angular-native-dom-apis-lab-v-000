@@ -10,6 +10,7 @@ function SomeDirective() {
 			this.text = 'Replace this text!';
 		},
 		controllerAs: 'some',
+		require: "someDirective",
 		link: function (scope, elem, attrs, ctrl) {
 			var trueElement = elem[0];
 			var spanElement = trueElement.querySelector("span")
