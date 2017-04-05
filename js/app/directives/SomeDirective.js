@@ -11,7 +11,12 @@ function SomeDirective() {
 		},
 		controllerAs: 'some',
 		link: function (scope, elem, attrs) {
+                  el = elem[0];
+                  el.addEventListener('click', function(){
+                    var heading = el.querySelector('h3');
+                    heading.innerText = 'Thank you for clicking!';
 
+                  });
 		}
 	}
 }
